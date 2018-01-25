@@ -1,9 +1,8 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
-const sassRuby = require('gulp-ruby-sass');
 gulp.task('default', () => {
-    return gulp.src('*.scss')
+    return gulp.src('./style/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('result'))
+        .pipe(gulp.dest('dist'))
 })
 
