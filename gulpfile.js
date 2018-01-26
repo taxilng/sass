@@ -15,10 +15,10 @@ gulp.task('default', ['clean'], () => {
 })
 
 gulp.task('watcher', () => {
-    gulp.watch('./style/**/*', () => {
+    gulp.watch('style/**/*', () => {
         clearTimeout(timer)
         timer = setTimeout(function () {
-           gulp.run('default')
+           gulp.start('default')
         },2000)
     })
 })

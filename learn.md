@@ -10,3 +10,8 @@ body {
 body 
     background-color: red
 ```
+3. 你可以使用 ``//`` 方式来注释代码 
+ ```
+body 
+    background-color: red //这是一段注释
+```
