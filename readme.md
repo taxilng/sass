@@ -5,6 +5,9 @@
 $ npm i -g gulp
 2.本项目安装依赖
 $ npm i
-3.运行编译sass
+3.手动编译sass
 $ gulp
+4.自动编译sass
+$ gulp watcher
+
 ```
