@@ -14,7 +14,7 @@ body
     background-color: red
 ```
 3. 你可以使用 `//` 方式来注释代码 
- ```scss
+```scss
 body 
     background-color: red //这是一段注释
 ```
@@ -90,14 +90,15 @@ nav {
 }
 ```
 
-7. 嵌套
-> sass可进行简单的加减乘除运算等
+7. 选择器嵌套
+> 在选择器嵌套中，可以使用 &表示父元素选择器
 ```scss
-nav {
-  width: (100-2)px;
-  border-width: (100/3)px;
-  height: 600px / 960px * 100%;
-}
+ a{
+    color: #fff;
+    &:hover{
+      color:#ddd;
+    }
+  }
 ```
 ------
 
@@ -113,6 +114,5 @@ a {
     &:hover{
       color:darken($linkColor,10%);
     }
-}ight: 600px / 960px * 100%;
 }
 ```

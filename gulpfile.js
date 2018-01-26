@@ -8,14 +8,14 @@ gulp.task('clean', () => {
 })
 
 gulp.task('default', ['clean'], () => {
-    return gulp.src('./style/*.scss')
+    return gulp.src('./style/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         // .pipe(cleanCSS())
         .pipe(gulp.dest('dist'))
 })
 
 gulp.task('watcher', () => {
-    gulp.watch('style/**/*', () => {
+    gulp.watch('style/**', () => {
         clearTimeout(timer)
         timer = setTimeout(function () {
            gulp.start('default')

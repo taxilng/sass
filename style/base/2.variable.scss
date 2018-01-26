@@ -1,6 +1,6 @@
-@import 'conf';
+@import '../common/conf';
 
-$redColor: red;
+$redColor: yellow; 
 body {
     background-color: $redColor;
     color: $blueSky
