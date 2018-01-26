@@ -1,5 +1,7 @@
 # sass学习
 <img style="width:200px" src="./img/sass.png" alt=""><br/>
+![sass-logo](http://ww4.sinaimg.cn/large/0060lm7Tly1fnu3y97wi3j30e80ap756.jpg)
+
 1. 你可以完全按照css的规则语法来书写scss
 ```scss
 body {
@@ -62,5 +64,55 @@ body {
 }
 .box {
     @include display-flex()
+}
+```
+5. 继承
+> sass可通过 @extend来实现属性继承，使代码更加优越简洁。
+```scss
+.message {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #ffff;    
+}
+
+.success {
+    @extend .message;
+    border-color: green; 
+}
+```
+6. 运算
+> sass可进行简单的加减乘除运算等
+```scss
+nav {
+  width: (100-2)px;
+  border-width: (100/3)px;
+  height: 600px / 960px * 100%;
+}
+```
+
+7. 嵌套
+> sass可进行简单的加减乘除运算等
+```scss
+nav {
+  width: (100-2)px;
+  border-width: (100/3)px;
+  height: 600px / 960px * 100%;
+}
+```
+------
+
+## 进阶
+
+1. 颜色
+> sass中集成了大量的颜色函数，让变换颜色更加简单。
+```scss
+$linkColor: #08c;
+a {
+    text-decoration:none;
+    color:$linkColor;
+    &:hover{
+      color:darken($linkColor,10%);
+    }
+}ight: 600px / 960px * 100%;
 }
 ```
