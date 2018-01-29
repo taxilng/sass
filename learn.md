@@ -17,6 +17,9 @@ body
 ```scss
 body 
     background-color: red //这是一段注释
+    /*
+     * 也可以使用标准注释    
+    */
 ```
 ## 入门用法
 1. 变量 来统一修改和维护
@@ -99,6 +102,23 @@ nav {
       color:#ddd;
     }
   }
+```
+8. 属性嵌套
+> 所谓属性嵌套指的是有些属性拥有同一个开始单词，如border-width，border-color都是以border开头
+```scss
+.box {
+  border: {
+    style: solid;
+    left: {
+      width: 4px;
+      color: #888;
+    }
+    right: {
+      width: 2px;
+      color: #ccc;
+    }
+  }
+}
 ```
 ------
 
