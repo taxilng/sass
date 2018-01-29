@@ -1,0 +1,34 @@
+//示例1
+$baseLineHeight: 1.5 !default;
+.box1{
+    line-height: $baseLineHeight; 
+}
+//示例2
+$baseWidth1 : 2px; 
+$baseWidth1 : 1px !default;
+.box2 {
+  width: $baseWidth1 
+}
+
+//示例3
+$baseWidth2 : 1px !default;
+$baseWidth2 : 2px; 
+.box3 {
+  width: $baseWidth2
+}
+//示例4
+$baseWidth3 : 3px; 
+$baseWidth3 : 1px !default;
+$baseWidth3 : 2px; 
+.box4 {
+  width: $baseWidth3
+}
+
+//示例5
+$baseWidth4 : 3px; 
+$baseWidth4 : 1px !default;
+
+.box5 {
+  width: $baseWidth4
+}
+$baseWidth4 : 2px; 

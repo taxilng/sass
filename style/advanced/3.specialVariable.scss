@@ -1,0 +1,16 @@
+$borderDirection:       top !default; 
+$baseFontSize:          12px !default;
+$baseLineHeight:        1.5 !default;
+
+//应用于class和属性
+.border-#{$borderDirection}{
+  border-#{$borderDirection}:1px solid #ccc;
+}
+//应用于复杂的属性值
+body{
+    font:#{$baseFontSize}/#{$baseLineHeight};
+}
+//错误示例，这样会计算成8px
+body{
+  font:$baseFontSize / $baseLineHeight;
+}
