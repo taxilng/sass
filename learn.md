@@ -1,5 +1,4 @@
 # sass学习
-<img style="width:200px" src="./img/sass.png" alt=""><br/>
 ![sass-logo](http://ww4.sinaimg.cn/large/0060lm7Tly1fnu3y97wi3j30e80ap756.jpg)
 
 1. 你可以完全按照css的规则语法来书写scss
@@ -134,5 +133,72 @@ a {
     &:hover{
       color:darken($linkColor,10%);
     }
+}
+```
+2. 默认变量
+> sass的默认变量仅需要在值后面加上 !default即可。优先级最低
+用于大型开发项目，css模块化，单独文件修改变量，不修改默认的值
+```scss
+$baseLineHeight: 1.5 !default;
+body{
+    line-height: $baseLineHeight; 
+}
+```
+
+3. 特殊变量
+> 一般我们定义的变量都为属性值，可直接使用，但是如果变量作为属性或在某些特殊情况下等则必须要以 #{$variables}形式使用。
+```scss
+$borderDirection:       top !default; 
+$baseFontSize:          12px !default;
+$baseLineHeight:        1.5 !default;
+
+//应用于class和属性
+.border-#{$borderDirection}{
+  border-#{$borderDirection}:1px solid #ccc;
+}
+//应用于复杂的属性值
+body{
+    font:#{$baseFontSize}/#{$baseLineHeight};
+}
+```
+
+4. 全局变量
+> 在变量值后面加上 !global即为全局变量。
+```scss
+$fontSize: 12px;
+$color: #333;
+body{
+    $fontSize: 14px;  
+    $color:   #fff !global;      
+    font-size:$fontSize;
+    color:$color;
+}
+p{
+    font-size:$fontSize; 
+    color:$color;
+}
+```
+
+5. 多值变量list
+> list数据可通过空格，逗号或小括号分隔多个值，可用 nth($var,$index)取值。
+```scss
+$linkColor: #08c #333 !default;//第一个值为默认值，第二个鼠标滑过值
+a{
+  color:nth($linkColor,1);
+
+  &:hover{
+    color:nth($linkColor,2);
+  }
+}
+```
+
+6. 多值变量map
+> map数据以key和value成对出现，其中value又可以是list。格式为： $map: (key1: value1, key2: value2, key3: value3);。可通过 map-get($map,$key)取值。。
+```scss
+$headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
+@each $header, $size in $headings {
+  #{$header} {
+    font-size: $size;
+  }
 }
 ```
