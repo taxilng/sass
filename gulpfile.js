@@ -14,11 +14,15 @@ gulp.task('default', ['clean'], () => {
         .pipe(gulp.dest('dist'))
 })
 
+// gulp.task('watcher', () => {
+//     gulp.watch('style/**', () => {
+//         clearTimeout(timer)
+//         timer = setTimeout(function () {
+//            gulp.start('default')
+//         },2000)
+//     })
+// })
+
 gulp.task('watcher', () => {
-    gulp.watch('style/**', () => {
-        clearTimeout(timer)
-        timer = setTimeout(function () {
-           gulp.start('default')
-        },2000)
-    })
+    gulp.watch('style/**',['default'])
 })
