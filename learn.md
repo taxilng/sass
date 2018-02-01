@@ -1,6 +1,8 @@
 # sass学习
 ![sass-logo](http://ww4.sinaimg.cn/large/0060lm7Tly1fnu3y97wi3j30e80ap756.jpg)
-
+// 痛点，解决CSS哪些问题
+// SASS的背景
+// 如何在我们项目中使用
 1. 你可以完全按照css的规则语法来书写scss
 ```scss
 body {
