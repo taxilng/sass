@@ -1,10 +1,11 @@
 const gulp = require('gulp')
+
 const sass = require('gulp-sass')
 const del = require('del');
 const cleanCSS = require('gulp-clean-css');
 let timer = null
 gulp.task('clean', () => {
-   return del('dist');
+    return del('dist');
 })
 
 gulp.task('default', ['clean'], () => {
@@ -24,5 +25,10 @@ gulp.task('default', ['clean'], () => {
 // })
 
 gulp.task('watcher', () => {
-    gulp.watch('style/**',['default'])
+    gulp.watch('style/**', ['default'])
 })
+
+
+// 痛点，解决CSS哪些问题
+// SASS的背景
+// 如何在我们项目中使用
