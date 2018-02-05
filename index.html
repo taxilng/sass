@@ -5,233 +5,259 @@
     <title></title>
     <link rel="stylesheet" href="./markdown.css">
 </head>
-<body >
-    <div style="width:980px;margin:0 auto;" id="readme" class="readme blob instapaper_body">
-        <article class="markdown-body entry-content" itemprop="text"><h1><a href="#sass学习" aria-hidden="true" class="anchor" id="user-content-sass学习"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sass学习</h1>
-    <p><a href="https://camo.githubusercontent.com/c0fe4062fb86390438f4d5f595218e0164033b26/687474703a2f2f7777342e73696e61696d672e636e2f6c617267652f303036306c6d37546c7931666e75337939377769336a333065383061703735362e6a7067" target="_blank"><img src="https://camo.githubusercontent.com/c0fe4062fb86390438f4d5f595218e0164033b26/687474703a2f2f7777342e73696e61696d672e636e2f6c617267652f303036306c6d37546c7931666e75337939377769336a333065383061703735362e6a7067" alt="sass-logo" data-canonical-src="http://ww4.sinaimg.cn/large/0060lm7Tly1fnu3y97wi3j30e80ap756.jpg" style="max-width:100%;"></a>
-    // 痛点，解决CSS哪些问题
-    // SASS的背景
-    // 如何在我们项目中使用</p>
-    <ol>
-    <li>你可以完全按照css的规则语法来书写scss</li>
-    </ol>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-ent">body</span> {
-        <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-c1">red</span>;
-    }</pre></div>
-    <ol start="2">
-    <li>.sass格式的省略了大括号，分号和花括号</li>
-    </ol>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-ent">body</span> 
-        background-color: red</pre></div>
-    <ol start="3">
-    <li>你可以使用 <code>//</code> 方式来注释代码</li>
-    </ol>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-ent">body</span> 
-        background-color: red<span class="pl-c"> //这是一段注释</span>
-    <span class="pl-c">    /*</span>
-    <span class="pl-c">     * 也可以使用标准注释    </span>
-    <span class="pl-c">    */</span></pre></div>
-    <h2><a href="#入门用法" aria-hidden="true" class="anchor" id="user-content-入门用法"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>入门用法</h2>
-    <ol>
-    <li>变量 来统一修改和维护</li>
-    </ol>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-smi">$redColor</span>: <span class="pl-c1">red</span>;
-    <span class="pl-ent">body</span> {
-        <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-smi">$redColor</span>;
-    }</pre></div>
-    <ol start="2">
-    <li>嵌套 层级关系，优雅</li>
-    </ol>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-ent">nav</span> {
-      <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">100</span><span class="pl-k">px</span>;
-      <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">100</span><span class="pl-k">px</span>;
-      <span class="pl-ent">ul</span> {
-        <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span>;
-        <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0</span>;
-        <span class="pl-c1"><span class="pl-c1">list-style</span></span>: <span class="pl-c1">none</span>;
-      }
-    }</pre></div>
-    <ol start="3">
-    <li>导入 自带的代码合并，最终会编译成一个css</li>
-    </ol>
-    <blockquote>
-    <p>sass的导入( @import)规则和CSS的有所不同，编译时会将 @import的scss文件合并进来只生成一个CSS文件。但是如果你在sass文件中导入css文件如 @import 'reset.css'，那效果跟普通CSS导入样式文件一样，导入的css文件不会合并到编译后的文件中，而是以 @import方式存在。
-    所有的sass导入文件都可以忽略后缀名 .scss。一般来说基础的文件命名方法以_开头，如 _mixin.scss。这种文件在导入的时候可以不写下划线，可写成 @import "mixin"。</p>
-    </blockquote>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-c">//conf.scss</span>
-    <span class="pl-smi">$blueSky</span>: <span class="pl-c1">blue</span>;
-    <span class="pl-c">//variable.scss</span>
-    <span class="pl-k">@import</span> '<span class="pl-v">conf</span>';<span class="pl-c"> //后缀可以省略</span>
-    
-    <span class="pl-ent">body</span> {
-        <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-smi">$blueSky</span>;
+<body>
+    <div style="width:980px;margin:0 auto;">
+        <div id="readme" class="readme blob instapaper_body">
+    <article class="markdown-body entry-content" itemprop="text"><h1><a href="#sass学习" aria-hidden="true" class="anchor" id="user-content-sass学习"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sass学习</h1>
+<p><a href="https://camo.githubusercontent.com/c0fe4062fb86390438f4d5f595218e0164033b26/687474703a2f2f7777342e73696e61696d672e636e2f6c617267652f303036306c6d37546c7931666e75337939377769336a333065383061703735362e6a7067" target="_blank"><img src="https://camo.githubusercontent.com/c0fe4062fb86390438f4d5f595218e0164033b26/687474703a2f2f7777342e73696e61696d672e636e2f6c617267652f303036306c6d37546c7931666e75337939377769336a333065383061703735362e6a7067" alt="sass-logo" data-canonical-src="http://ww4.sinaimg.cn/large/0060lm7Tly1fnu3y97wi3j30e80ap756.jpg" style="max-width:100%;"></a></p>
+<h2><a href="#世界上最成熟最稳定最强大的专业级css扩展语言" aria-hidden="true" class="anchor" id="user-content-世界上最成熟最稳定最强大的专业级css扩展语言"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>世界上最成熟、最稳定、最强大的专业级CSS扩展语言！</h2>
+<blockquote>
+<p>Sass(Syntactically Awesome Style Sheets)是一个相对新的编程语言，Sass为web前端开发而生，可以用它来定义一套新的语法规则和函数，以加强和提升CSS。通过这种新的编程语言，你可以使用最高效的方式，以少量的代码创建复杂的设计。它改进并增强了CSS的能力，增加了变量，局部和函数这些特性。而这只使Sass一部分利器!</p>
+</blockquote>
+<ul>
+<li>由Hampton Catlin汉普顿·卡特林发明</li>
+<li>Sass完全兼容所有版本的CSS。我们对此严格把控，所以你可以无缝地使用任何可用的CSS库。</li>
+<li>Sass拥有比其他任何CSS扩展语言更多的功能和特性。</li>
+<li>数家科技企业和成百上千名开发者为Sass提供支持。</li>
+<li>有无数的框架使用Sass构建。比如Compass，Bourbon，和Susy。</li>
+</ul>
+<h2><a href="#sass解决了css中的哪些痛点" aria-hidden="true" class="anchor" id="user-content-sass解决了css中的哪些痛点"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SASS解决了CSS中的哪些痛点？</h2>
+<ol>
+<li>
+<p><strong>易维护，更方便的定制</strong> <br>
+对于一个大型或者稍微有规模的UI来说，如果需要替换下整体风格，或者是某个字体的像素值，比如我们经常会遇到panel，window以及portal共用一个背景色，这个时候按照常规的方式，我们需要一个个定位到元素使用的class，然后逐个替换，SASS提供了变量的方式，你可以把某个样式作为一个变量，然后各个class引用这个变量即可，修改时，我们只需修改对应的变量。</p>
+</li>
+<li>
+<p><strong>效率的提升</strong> <br>
+很多浏览器都有自己的兼容hack，很多时候我们需要针对不同的浏览器写一堆的hack，这种浪费时间的重复劳动就交给SASS处理去吧!我们可以在sass中写代码片段mixin，一次书写，终生试用。</p>
+</li>
+<li>
+<p><strong>嵌套</strong> <br>
+原本的css是并列式的样式书写，显得杂乱无章。而Sass采用的对象嵌套是书写方式，跟html一致的文档树结构。代码显得优雅，找寻需要更改的样式也是一目了然。</p>
+</li>
+</ol>
+<h2><a href="#入门用法" aria-hidden="true" class="anchor" id="user-content-入门用法"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>入门用法</h2>
+<ol>
+<li>你可以完全按照css的规则语法来书写scss</li>
+</ol>
+<div class="highlight highlight-source-scss"><pre><span class="pl-ent">body</span> {
+    <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-c1">red</span>;
+}</pre></div>
+<ol start="2">
+<li>.sass格式的省略了大括号，分号和花括号</li>
+</ol>
+<div class="highlight highlight-source-scss"><pre><span class="pl-ent">body</span> 
+    background-color: red</pre></div>
+<ol start="3">
+<li>你可以使用 <code>//</code> 方式来注释代码</li>
+</ol>
+<div class="highlight highlight-source-scss"><pre><span class="pl-ent">body</span> 
+    background-color: red<span class="pl-c"> //这是一段注释</span>
+<span class="pl-c">    /*</span>
+<span class="pl-c">     * 也可以使用标准注释    </span>
+<span class="pl-c">    */</span></pre></div>
+<ol start="4">
+<li>变量 来统一修改和维护</li>
+</ol>
+<div class="highlight highlight-source-scss"><pre><span class="pl-smi">$redColor</span>: <span class="pl-c1">red</span>;
+<span class="pl-ent">body</span> {
+    <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-smi">$redColor</span>;
+}</pre></div>
+<ol start="5">
+<li>嵌套 层级关系，优雅</li>
+</ol>
+<div class="highlight highlight-source-scss"><pre><span class="pl-ent">nav</span> {
+  <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">100</span><span class="pl-k">px</span>;
+  <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">100</span><span class="pl-k">px</span>;
+  <span class="pl-ent">ul</span> {
+    <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span>;
+    <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0</span>;
+    <span class="pl-c1"><span class="pl-c1">list-style</span></span>: <span class="pl-c1">none</span>;
+  }
+}</pre></div>
+<ol start="6">
+<li>导入 自带的代码合并，最终会编译成一个css</li>
+</ol>
+<blockquote>
+<p>sass的导入( @import)规则和CSS的有所不同，编译时会将 @import的scss文件合并进来只生成一个CSS文件。但是如果你在sass文件中导入css文件如 @import 'reset.css'，那效果跟普通CSS导入样式文件一样，导入的css文件不会合并到编译后的文件中，而是以 @import方式存在。
+所有的sass导入文件都可以忽略后缀名 .scss。一般来说基础的文件命名方法以_开头，如 _mixin.scss。这种文件在导入的时候可以不写下划线，可写成 @import "mixin"。</p>
+</blockquote>
+<div class="highlight highlight-source-scss"><pre><span class="pl-c">//conf.scss</span>
+<span class="pl-smi">$blueSky</span>: <span class="pl-c1">blue</span>;
+<span class="pl-c">//variable.scss</span>
+<span class="pl-k">@import</span> '<span class="pl-v">conf</span>';<span class="pl-c"> //后缀可以省略</span>
+
+<span class="pl-ent">body</span> {
+    <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-smi">$blueSky</span>;
+}
+</pre></div>
+<ol start="7">
+<li>mixin</li>
+</ol>
+<blockquote>
+<p>sass中可用mixin定义一些代码片段，且可传参数，方便日后根据需求调用。从此处理css3的前缀兼容轻松便捷。</p>
+</blockquote>
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@mixin</span> <span class="pl-en">display-flex</span>() {
+    <span class="pl-c1"><span class="pl-c1">display</span></span>: -webkit<span class="pl-c1">-</span>box;
+    <span class="pl-c1"><span class="pl-c1">display</span></span>: -moz<span class="pl-c1">-</span>box;
+    <span class="pl-c1"><span class="pl-c1">display</span></span>: -ms<span class="pl-c1">-</span>flexbox;
+    <span class="pl-c1"><span class="pl-c1">display</span></span>: -webkit<span class="pl-c1">-</span>flex;
+    <span class="pl-c1"><span class="pl-c1">display</span></span>: flex;
+}
+<span class="pl-e">.box</span> {
+    <span class="pl-k">@include</span> <span class="pl-c1">display-flex</span>()
+}</pre></div>
+<ol start="8">
+<li>继承</li>
+</ol>
+<blockquote>
+<p>sass可通过 @extend来实现属性继承，使代码更加优越简洁。</p>
+</blockquote>
+<div class="highlight highlight-source-scss"><pre><span class="pl-e">.message</span> {
+    <span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1</span><span class="pl-k">px</span> <span class="pl-c1">solid</span> <span class="pl-c1">#ccc</span>;
+    <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">10</span><span class="pl-k">px</span>;
+    <span class="pl-c1"><span class="pl-c1">color</span></span>: #ffff;    
+}
+
+<span class="pl-e">.success</span> {
+    <span class="pl-k">@extend</span> <span class="pl-e">.message</span>;
+    <span class="pl-c1"><span class="pl-c1">border-color</span></span>: <span class="pl-c1">green</span>; 
+}</pre></div>
+<ol start="9">
+<li>运算</li>
+</ol>
+<blockquote>
+<p>sass可进行简单的加减乘除运算等</p>
+</blockquote>
+<div class="highlight highlight-source-scss"><pre><span class="pl-ent">nav</span> {
+  <span class="pl-c1"><span class="pl-c1">width</span></span>: (<span class="pl-c1">100-2</span>)px;
+  <span class="pl-c1"><span class="pl-c1">border-width</span></span>: (<span class="pl-c1">100</span><span class="pl-c1">/</span><span class="pl-c1">3</span>)px;
+  <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">600</span><span class="pl-k">px</span> /<span class="pl-c1"> 960</span><span class="pl-k">px</span> *<span class="pl-c1"> 100</span><span class="pl-k">%</span>;
+}</pre></div>
+<ol start="10">
+<li>选择器嵌套</li>
+</ol>
+<blockquote>
+<p>在选择器嵌套中，可以使用 &amp;表示父元素选择器</p>
+</blockquote>
+<div class="highlight highlight-source-scss"><pre> <span class="pl-ent">a</span>{
+    <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#fff</span>;
+    <span class="pl-ent">&amp;</span><span class="pl-e">:hover</span>{
+      <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-c1">#ddd</span>;
     }
-    </pre></div>
-    <ol start="4">
-    <li>mixin</li>
-    </ol>
-    <blockquote>
-    <p>sass中可用mixin定义一些代码片段，且可传参数，方便日后根据需求调用。从此处理css3的前缀兼容轻松便捷。</p>
-    </blockquote>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-k">@mixin</span> <span class="pl-en">display-flex</span>() {
-        <span class="pl-c1"><span class="pl-c1">display</span></span>: -webkit<span class="pl-c1">-</span>box;
-        <span class="pl-c1"><span class="pl-c1">display</span></span>: -moz<span class="pl-c1">-</span>box;
-        <span class="pl-c1"><span class="pl-c1">display</span></span>: -ms<span class="pl-c1">-</span>flexbox;
-        <span class="pl-c1"><span class="pl-c1">display</span></span>: -webkit<span class="pl-c1">-</span>flex;
-        <span class="pl-c1"><span class="pl-c1">display</span></span>: flex;
+  }</pre></div>
+<ol start="11">
+<li>属性嵌套</li>
+</ol>
+<blockquote>
+<p>所谓属性嵌套指的是有些属性拥有同一个开始单词，如border-width，border-color都是以border开头</p>
+</blockquote>
+<div class="highlight highlight-source-scss"><pre><span class="pl-e">.box</span> {
+  <span class="pl-c1"><span class="pl-c1">border</span></span>: {
+    <span class="pl-ent">style</span>: <span class="pl-c1">solid</span>;
+    <span class="pl-c1"><span class="pl-c1">left</span></span>: {
+      <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">4</span><span class="pl-k">px</span>;
+      <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#888</span>;
     }
-    <span class="pl-e">.box</span> {
-        <span class="pl-k">@include</span> <span class="pl-c1">display-flex</span>()
-    }</pre></div>
-    <ol start="5">
-    <li>继承</li>
-    </ol>
-    <blockquote>
-    <p>sass可通过 @extend来实现属性继承，使代码更加优越简洁。</p>
-    </blockquote>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-e">.message</span> {
-        <span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1</span><span class="pl-k">px</span> <span class="pl-c1">solid</span> <span class="pl-c1">#ccc</span>;
-        <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">10</span><span class="pl-k">px</span>;
-        <span class="pl-c1"><span class="pl-c1">color</span></span>: #ffff;    
+    <span class="pl-c1"><span class="pl-c1">right</span></span>: {
+      <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">2</span><span class="pl-k">px</span>;
+      <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#ccc</span>;
     }
-    
-    <span class="pl-e">.success</span> {
-        <span class="pl-k">@extend</span> <span class="pl-e">.message</span>;
-        <span class="pl-c1"><span class="pl-c1">border-color</span></span>: <span class="pl-c1">green</span>; 
-    }</pre></div>
-    <ol start="6">
-    <li>运算</li>
-    </ol>
-    <blockquote>
-    <p>sass可进行简单的加减乘除运算等</p>
-    </blockquote>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-ent">nav</span> {
-      <span class="pl-c1"><span class="pl-c1">width</span></span>: (<span class="pl-c1">100-2</span>)px;
-      <span class="pl-c1"><span class="pl-c1">border-width</span></span>: (<span class="pl-c1">100</span><span class="pl-c1">/</span><span class="pl-c1">3</span>)px;
-      <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">600</span><span class="pl-k">px</span> /<span class="pl-c1"> 960</span><span class="pl-k">px</span> *<span class="pl-c1"> 100</span><span class="pl-k">%</span>;
-    }</pre></div>
-    <ol start="7">
-    <li>选择器嵌套</li>
-    </ol>
-    <blockquote>
-    <p>在选择器嵌套中，可以使用 &amp;表示父元素选择器</p>
-    </blockquote>
-    <div class="highlight highlight-source-scss"><pre> <span class="pl-ent">a</span>{
-        <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#fff</span>;
-        <span class="pl-ent">&amp;</span><span class="pl-e">:hover</span>{
-          <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-c1">#ddd</span>;
-        }
-      }</pre></div>
-    <ol start="8">
-    <li>属性嵌套</li>
-    </ol>
-    <blockquote>
-    <p>所谓属性嵌套指的是有些属性拥有同一个开始单词，如border-width，border-color都是以border开头</p>
-    </blockquote>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-e">.box</span> {
-      <span class="pl-c1"><span class="pl-c1">border</span></span>: {
-        <span class="pl-ent">style</span>: <span class="pl-c1">solid</span>;
-        <span class="pl-c1"><span class="pl-c1">left</span></span>: {
-          <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">4</span><span class="pl-k">px</span>;
-          <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#888</span>;
-        }
-        <span class="pl-c1"><span class="pl-c1">right</span></span>: {
-          <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">2</span><span class="pl-k">px</span>;
-          <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#ccc</span>;
-        }
-      }
-    }</pre></div>
-    <hr>
-    <h2><a href="#进阶" aria-hidden="true" class="anchor" id="user-content-进阶"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>进阶</h2>
-    <ol>
-    <li>颜色</li>
-    </ol>
-    <blockquote>
-    <p>sass中集成了大量的颜色函数，让变换颜色更加简单。</p>
-    </blockquote>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-smi">$linkColor</span>: <span class="pl-c1">#08c</span>;
-    <span class="pl-ent">a</span> {
-        <span class="pl-c1"><span class="pl-c1">text-decoration</span></span>:<span class="pl-c1">none</span>;
-        <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-smi">$linkColor</span>;
-        <span class="pl-ent">&amp;</span><span class="pl-e">:hover</span>{
-          <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-c1">darken</span>(<span class="pl-smi">$linkColor</span>,<span class="pl-c1">10</span><span class="pl-k">%</span>);
-        }
-    }</pre></div>
-    <ol start="2">
-    <li>默认变量</li>
-    </ol>
-    <blockquote>
-    <p>sass的默认变量仅需要在值后面加上 !default即可。优先级最低
-    用于大型开发项目，css模块化，单独文件修改变量，不修改默认的值</p>
-    </blockquote>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-smi">$baseLineHeight</span>: <span class="pl-c1">1.5</span> <span class="pl-k">!default</span>;
-    <span class="pl-ent">body</span>{
-        <span class="pl-c1"><span class="pl-c1">line-height</span></span>: <span class="pl-smi">$baseLineHeight</span>; 
-    }</pre></div>
-    <ol start="3">
-    <li>特殊变量</li>
-    </ol>
-    <blockquote>
-    <p>一般我们定义的变量都为属性值，可直接使用，但是如果变量作为属性或在某些特殊情况下等则必须要以 #{$variables}形式使用。</p>
-    </blockquote>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-smi">$borderDirection</span>:       <span class="pl-c1">top</span> <span class="pl-k">!default</span>; 
-    <span class="pl-smi">$baseFontSize</span>:          <span class="pl-c1">12</span><span class="pl-k">px</span> <span class="pl-k">!default</span>;
-    <span class="pl-smi">$baseLineHeight</span>:        <span class="pl-c1">1.5</span> <span class="pl-k">!default</span>;
-    
-    <span class="pl-c">//应用于class和属性</span>
-    <span class="pl-e">.border-</span><span class="pl-smi">#{<span class="pl-smi">$borderDirection</span>}</span>{
-      <span class="pl-c1"><span class="pl-c1">border</span>-</span><span class="pl-smi">#{<span class="pl-smi">$borderDirection</span>}</span>:<span class="pl-c1">1</span><span class="pl-k">px</span> <span class="pl-c1">solid</span> <span class="pl-c1">#ccc</span>;
+  }
+}</pre></div>
+<hr>
+<h2><a href="#进阶" aria-hidden="true" class="anchor" id="user-content-进阶"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>进阶</h2>
+<ol>
+<li>颜色</li>
+</ol>
+<blockquote>
+<p>sass中集成了大量的颜色函数，让变换颜色更加简单。</p>
+</blockquote>
+<div class="highlight highlight-source-scss"><pre><span class="pl-smi">$linkColor</span>: <span class="pl-c1">#08c</span>;
+<span class="pl-ent">a</span> {
+    <span class="pl-c1"><span class="pl-c1">text-decoration</span></span>:<span class="pl-c1">none</span>;
+    <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-smi">$linkColor</span>;
+    <span class="pl-ent">&amp;</span><span class="pl-e">:hover</span>{
+      <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-c1">darken</span>(<span class="pl-smi">$linkColor</span>,<span class="pl-c1">10</span><span class="pl-k">%</span>);
     }
-    <span class="pl-c">//应用于复杂的属性值</span>
-    <span class="pl-ent">body</span>{
-        <span class="pl-c1"><span class="pl-c1">font</span></span>:<span class="pl-smi">#{<span class="pl-smi">$baseFontSize</span>}/#{<span class="pl-smi">$baseLineHeight</span>}</span>;
-    }</pre></div>
-    <ol start="4">
-    <li>全局变量</li>
-    </ol>
-    <blockquote>
-    <p>在变量值后面加上 !global即为全局变量。</p>
-    </blockquote>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-smi">$fontSize</span>: <span class="pl-c1">12</span><span class="pl-k">px</span>;
-    <span class="pl-smi">$color</span>: <span class="pl-c1">#333</span>;
-    <span class="pl-ent">body</span>{
-        <span class="pl-smi">$fontSize</span>: <span class="pl-c1">14</span><span class="pl-k">px</span>;  
-        <span class="pl-smi">$color</span>:   <span class="pl-c1">#fff</span> !global;      
-        <span class="pl-c1"><span class="pl-c1">font-size</span></span>:<span class="pl-smi">$fontSize</span>;
-        <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-smi">$color</span>;
-    }
-    <span class="pl-ent">p</span>{
-        <span class="pl-c1"><span class="pl-c1">font-size</span></span>:<span class="pl-smi">$fontSize</span>; 
-        <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-smi">$color</span>;
-    }</pre></div>
-    <ol start="5">
-    <li>多值变量list</li>
-    </ol>
-    <blockquote>
-    <p>list数据可通过空格，逗号或小括号分隔多个值，可用 nth($var,$index)取值。</p>
-    </blockquote>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-smi">$linkColor</span>: <span class="pl-c1">#08c</span> <span class="pl-c1">#333</span> <span class="pl-k">!default</span>;<span class="pl-c">//第一个值为默认值，第二个鼠标滑过值</span>
-    <span class="pl-ent">a</span>{
-      <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-c1">nth</span>(<span class="pl-smi">$linkColor</span>,<span class="pl-c1">1</span>);
-    
-      <span class="pl-ent">&amp;</span><span class="pl-e">:hover</span>{
-        <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-c1">nth</span>(<span class="pl-smi">$linkColor</span>,<span class="pl-c1">2</span>);
-      }
-    }</pre></div>
-    <ol start="6">
-    <li>多值变量map</li>
-    </ol>
-    <blockquote>
-    <p>map数据以key和value成对出现，其中value又可以是list。格式为： $map: (key1: value1, key2: value2, key3: value3);。可通过 map-get($map,$key)取值。。</p>
-    </blockquote>
-    <div class="highlight highlight-source-scss"><pre><span class="pl-smi">$headings</span>: (h<span class="pl-c1">1</span>:<span class="pl-c1"> 2</span><span class="pl-k">em</span>, h<span class="pl-c1">2</span>:<span class="pl-c1"> 1.5</span><span class="pl-k">em</span>, h<span class="pl-c1">3</span>:<span class="pl-c1"> 1.2</span><span class="pl-k">em</span>);
-    <span class="pl-k">@each</span> <span class="pl-smi">$header</span>, <span class="pl-smi">$size</span> <span class="pl-k">in</span> <span class="pl-smi">$headings</span> {
-      <span class="pl-smi">#{<span class="pl-smi">$header</span>}</span> {
-        <span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-smi">$size</span>;
-      }
-    }</pre></div>
-    </article>
-      </div>
+}</pre></div>
+<ol start="2">
+<li>默认变量</li>
+</ol>
+<blockquote>
+<p>sass的默认变量仅需要在值后面加上 !default即可。优先级最低
+用于大型开发项目，css模块化，单独文件修改变量，不修改默认的值</p>
+</blockquote>
+<div class="highlight highlight-source-scss"><pre><span class="pl-smi">$baseLineHeight</span>: <span class="pl-c1">1.5</span> <span class="pl-k">!default</span>;
+<span class="pl-ent">body</span>{
+    <span class="pl-c1"><span class="pl-c1">line-height</span></span>: <span class="pl-smi">$baseLineHeight</span>; 
+}</pre></div>
+<ol start="3">
+<li>特殊变量</li>
+</ol>
+<blockquote>
+<p>一般我们定义的变量都为属性值，可直接使用，但是如果变量作为属性或在某些特殊情况下等则必须要以 #{$variables}形式使用。</p>
+</blockquote>
+<div class="highlight highlight-source-scss"><pre><span class="pl-smi">$borderDirection</span>:       <span class="pl-c1">top</span> <span class="pl-k">!default</span>; 
+<span class="pl-smi">$baseFontSize</span>:          <span class="pl-c1">12</span><span class="pl-k">px</span> <span class="pl-k">!default</span>;
+<span class="pl-smi">$baseLineHeight</span>:        <span class="pl-c1">1.5</span> <span class="pl-k">!default</span>;
+
+<span class="pl-c">//应用于class和属性</span>
+<span class="pl-e">.border-</span><span class="pl-smi">#{<span class="pl-smi">$borderDirection</span>}</span>{
+  <span class="pl-c1"><span class="pl-c1">border</span>-</span><span class="pl-smi">#{<span class="pl-smi">$borderDirection</span>}</span>:<span class="pl-c1">1</span><span class="pl-k">px</span> <span class="pl-c1">solid</span> <span class="pl-c1">#ccc</span>;
+}
+<span class="pl-c">//应用于复杂的属性值</span>
+<span class="pl-ent">body</span>{
+    <span class="pl-c1"><span class="pl-c1">font</span></span>:<span class="pl-smi">#{<span class="pl-smi">$baseFontSize</span>}/#{<span class="pl-smi">$baseLineHeight</span>}</span>;
+}</pre></div>
+<ol start="4">
+<li>全局变量</li>
+</ol>
+<blockquote>
+<p>在变量值后面加上 !global即为全局变量。</p>
+</blockquote>
+<div class="highlight highlight-source-scss"><pre><span class="pl-smi">$fontSize</span>: <span class="pl-c1">12</span><span class="pl-k">px</span>;
+<span class="pl-smi">$color</span>: <span class="pl-c1">#333</span>;
+<span class="pl-ent">body</span>{
+    <span class="pl-smi">$fontSize</span>: <span class="pl-c1">14</span><span class="pl-k">px</span>;  
+    <span class="pl-smi">$color</span>:   <span class="pl-c1">#fff</span> !global;      
+    <span class="pl-c1"><span class="pl-c1">font-size</span></span>:<span class="pl-smi">$fontSize</span>;
+    <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-smi">$color</span>;
+}
+<span class="pl-ent">p</span>{
+    <span class="pl-c1"><span class="pl-c1">font-size</span></span>:<span class="pl-smi">$fontSize</span>; 
+    <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-smi">$color</span>;
+}</pre></div>
+<ol start="5">
+<li>多值变量list</li>
+</ol>
+<blockquote>
+<p>list数据可通过空格，逗号或小括号分隔多个值，可用 nth($var,$index)取值。</p>
+</blockquote>
+<div class="highlight highlight-source-scss"><pre><span class="pl-smi">$linkColor</span>: <span class="pl-c1">#08c</span> <span class="pl-c1">#333</span> <span class="pl-k">!default</span>;<span class="pl-c">//第一个值为默认值，第二个鼠标滑过值</span>
+<span class="pl-ent">a</span>{
+  <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-c1">nth</span>(<span class="pl-smi">$linkColor</span>,<span class="pl-c1">1</span>);
+
+  <span class="pl-ent">&amp;</span><span class="pl-e">:hover</span>{
+    <span class="pl-c1"><span class="pl-c1">color</span></span>:<span class="pl-c1">nth</span>(<span class="pl-smi">$linkColor</span>,<span class="pl-c1">2</span>);
+  }
+}</pre></div>
+<ol start="6">
+<li>多值变量map</li>
+</ol>
+<blockquote>
+<p>map数据以key和value成对出现，其中value又可以是list。格式为： $map: (key1: value1, key2: value2, key3: value3);。可通过 map-get($map,$key)取值。。</p>
+</blockquote>
+<div class="highlight highlight-source-scss"><pre><span class="pl-smi">$headings</span>: (h<span class="pl-c1">1</span>:<span class="pl-c1"> 2</span><span class="pl-k">em</span>, h<span class="pl-c1">2</span>:<span class="pl-c1"> 1.5</span><span class="pl-k">em</span>, h<span class="pl-c1">3</span>:<span class="pl-c1"> 1.2</span><span class="pl-k">em</span>);
+<span class="pl-k">@each</span> <span class="pl-smi">$header</span>, <span class="pl-smi">$size</span> <span class="pl-k">in</span> <span class="pl-smi">$headings</span> {
+  <span class="pl-smi">#{<span class="pl-smi">$header</span>}</span> {
+    <span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-smi">$size</span>;
+  }
+}</pre></div>
+</article>
+  </div>
+
+    </div>
 </body>
 <script>
     
